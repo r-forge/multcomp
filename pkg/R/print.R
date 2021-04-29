@@ -36,7 +36,7 @@ print.summary.glht <- function(x, digits = max(3, getOption("digits") - 3),
     pq <- x$test
     mtests <- cbind(pq$coefficients, pq$sigma, pq$tstat, pq$pvalues)
     error <- attr(pq$pvalues, "error")
-    pname <- switch(x$alternativ,
+    pname <- switch(x$alternative,
         "less" = paste("Pr(<", ifelse(x$df == 0, "z", "t"), ")", sep = ""),
         "greater" = paste("Pr(>", ifelse(x$df == 0, "z", "t"), ")", sep = ""),
         "two.sided" = paste("Pr(>|", ifelse(x$df == 0, "z", "t"), "|)", sep = ""))
