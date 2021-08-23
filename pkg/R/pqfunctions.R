@@ -114,9 +114,9 @@ global <- function(type = c("Chisq", "F"))
         m <- coef(object, rhs = TRUE)
         covm <- vcov(object)
 
-        tmp <- betahat - m
+        tmp <- matrix(betahat - m, ncol = 1L)
         MP <- MPinv(covm)
-        SSH <- t(tmp) %*% MP$MPinv %*% tmp
+        SSH <- crossprod(tmp, MP$MPinv %*% tmp)
 
         q <- MP$rank
         if (type == "F") {
