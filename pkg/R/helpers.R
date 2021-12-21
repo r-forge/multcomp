@@ -265,6 +265,15 @@ modelparm.gamlss <- function(model, coef. = gamlss.coef, vcov. = gamlss.vcov,
                              df = NULL, ...)
     modelparm.default(model, coef. = coef., vcov. = vcov., df = df, ...)
 
+### fixed effects models (package fixest). Contributed by Grant McDermott 2021-12-17
+modelparm.fixest <- function(model, coef. = coef, vcov. = vcov, df = NULL, ...) {
+    model <- summary(model, vcov = vcov.)
+    vcov. <- vcov(model)
+    if (is.null(df))
+        df <- fixest::degrees_freedom(model, type = "resid")
+    modelparm.default(model, coef. = coef., vcov. = vcov., df = df, ...)
+}
+
 ### modified from package MASS  
 MPinv <- function (X, tol = sqrt(.Machine$double.eps))
 {
