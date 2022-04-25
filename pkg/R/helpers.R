@@ -94,41 +94,6 @@ model.frame.lme <- function(object, ...) {
     ret
 }
 
-### gamlss (donated by Marcio A Diniz)
-model.matrix.gamlss <- function(object, ...) {
-    cf <- na.exclude(coef(object))
-    
-    ### extract model matrix, frame and terms
-    mm <- model.matrix(terms(object),
-                       data = model.frame(object))
-    aux <- list(assign = attributes(mm)[["assign"]],
-                contrasts = attributes(mm)[["contrasts"]])
-    
-    mm <- mm[, 1:length(cf)]
-    attr(mm, "assign") <- aux$assign[1:length(cf)]
-    attr(mm, "contrasts") <- aux$contrasts
-    mm
-}
-
-
-gamlss.coef <- function(object, ...) {
-    dots <- list(...)
-    #class(object) <- class(object)[1]
-    cf <- na.exclude(coef(object, what = dots$what))
-    cf
-}
-
-gamlss.vcov <- function(object, ...) {
-    dots <- list(...)
-    #class(object) <- class(object)[1]
-    
-    p <- match(dots$what, object$parameters)
-    
-    vc <- vcov(object, what = dots$what) 
-    index <- which(cumsum(rownames(vc) == "(Intercept)") == p)
-    vc[index, index, drop = FALSE]
-}
-
 ### extract coefficients, covariance matrix and 
 ### degrees of freedom (if available) from `model'
 modelparm <- function(model, coef., vcov., df, ...) 
@@ -258,11 +223,6 @@ polrvcov <- function(object) {
 }
 
 modelparm.polr <- function(model, coef. = coef, vcov. = polrvcov, df = NULL, ...)
-    modelparm.default(model, coef. = coef., vcov. = vcov., df = df, ...)
-
-### use what = "" in ..., see ?coef.gamlss
-modelparm.gamlss <- function(model, coef. = gamlss.coef, vcov. = gamlss.vcov, 
-                             df = NULL, ...)
     modelparm.default(model, coef. = coef., vcov. = vcov., df = df, ...)
 
 ### fixed effects models (package fixest). Contributed by Grant McDermott 2021-12-17
