@@ -1,4 +1,8 @@
 
+Changes in 1.4-20 (2022-07-07)
+
+    o    add nlme::gls support (feature request by Adrian Olszewski)
+
 Changes in 1.4-19 (2022-04-25)
 
     o    proper use of inherits in user-contributed code
