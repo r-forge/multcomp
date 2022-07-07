@@ -190,6 +190,16 @@ vcovsurvreg <- function(object, ...) {
     return(sigma[1:p, 1:p])
 }
 
+### nlme:::gls
+model.matrix.gls <- function(object, ...)
+    model.matrix(terms(object), data = getData(object), ...)
+
+model.frame.gls <- function(object, ...)
+    model.frame(formula(object), data = getData(object), ...)
+
+terms.gls <- function(object, ...)
+    terms(model.frame(object), ...)
+
 modelparm.survreg <- function(model, coef. = coef, vcov. = vcovsurvreg, df = NULL, ...)
     modelparm.default(model, coef. = coef., vcov. = vcov., df = df, ...)
 
