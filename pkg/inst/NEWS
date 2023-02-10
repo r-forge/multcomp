@@ -1,12 +1,9 @@
 
-Changes in 1.4-22 (2023-02-09)
+Changes in 1.4-21 (2023-02-09)
 
     o    Suggests: glmmTMB
 
-Changes in 1.4-21 (2022-11-08)
-
     o    various cld() fixes
-
 
 Changes in 1.4-20 (2022-08-05)
 
