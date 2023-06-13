@@ -70,106 +70,11 @@ drugE - drugD == 0       5.59
 
 > 
 > ### was: error
-> summary(cht1)$test
-$pfunction
-function (type = c("univariate", "adjusted", p.adjust.methods), 
-    ...) 
-{
-    type <- match.arg(type)
-    pfct <- function(q) {
-        switch(object$alternative, two.sided = {
-            low <- rep(-abs(q), dim)
-            upp <- rep(abs(q), dim)
-        }, less = {
-            low <- rep(q, dim)
-            upp <- rep(Inf, dim)
-        }, greater = {
-            low <- rep(-Inf, dim)
-            upp <- rep(q, dim)
-        })
-        pmvt(lower = low, upper = upp, df = df, corr = cr, ...)
-    }
-    switch(object$alternative, two.sided = {
-        if (df > 0) pvals <- 2 * (1 - pt(abs(tstat), df)) else pvals <- 2 * 
-            (1 - pnorm(abs(tstat)))
-    }, less = {
-        if (df > 0) pvals <- pt(tstat, df) else pvals <- pnorm(tstat)
-    }, greater = {
-        if (df > 0) pvals <- 1 - pt(tstat, df) else pvals <- 1 - 
-            pnorm(tstat)
-    })
-    if (type == "univariate") 
-        return(pvals)
-    if (type == "adjusted") {
-        ret <- numeric(length(tstat))
-        error <- 0
-        for (i in 1:length(tstat)) {
-            tmp <- pfct(tstat[i])
-            if (attr(tmp, "msg") != "Normal Completion" && length(grep("^univariate", 
-                attr(tmp, "msg"))) == 0) 
-                warning(attr(tmp, "msg"))
-            if (error < attr(tmp, "error")) 
-                error <- attr(tmp, "error")
-            ret[i] <- tmp
-        }
-        ret <- 1 - ret
-        attr(ret, "error") <- error
-        return(ret)
-    }
-    return(p.adjust(pvals, method = type))
-}
-<bytecode: 0x5581058ba1e0>
-<environment: 0x5581058cb058>
-
-$qfunction
-function (conf.level, adjusted = TRUE, ...) 
-{
-    tail <- switch(object$alternative, two.sided = "both.tails", 
-        less = "lower.tail", greater = "upper.tail")
-    if (adjusted) {
-        calpha <- qmvt(conf.level, df = df, corr = cr, tail = tail, 
-            ...)
-    }
-    else {
-        calpha <- qmvt(conf.level, df = df, corr = matrix(1), 
-            tail = tail, ...)
-    }
-    ret <- calpha$quantile
-    attr(ret, "error") <- calpha$estim.prec
-    return(ret)
-}
-<bytecode: 0x5581058c1a28>
-<environment: 0x5581058cb058>
-
-$coefficients
+> summary(cht1)$test$coefficients
  2times - 1time  4times - 1time   drugD - 1time   drugE - 1time 4times - 2times 
           3.443           6.593           9.579          15.166           3.150 
  drugD - 2times  drugE - 2times  drugD - 4times  drugE - 4times   drugE - drugD 
           6.136          11.723           2.986           8.573           5.586 
-
-$sigma
- 2times - 1time  4times - 1time   drugD - 1time   drugE - 1time 4times - 2times 
-          1.443           1.443           1.443           1.443           1.443 
- drugD - 2times  drugE - 2times  drugD - 4times  drugE - 4times   drugE - drugD 
-          1.443           1.443           1.443           1.443           1.443 
-
-$tstat
- 2times - 1time  4times - 1time   drugD - 1time   drugE - 1time 4times - 2times 
-          2.385           4.568           6.637          10.507           2.182 
- drugD - 2times  drugE - 2times  drugD - 4times  drugE - 4times   drugE - drugD 
-          4.251           8.122           2.069           5.939           3.870 
-
-$pvalues
- [1] 1.381e-01 3.525e-04 3.564e-07 2.898e-14 2.050e-01 9.918e-04 6.540e-10
- [8] 2.513e-01 3.448e-06 3.043e-03
-attr(,"error")
-[1] 0.0001911
-
-$type
-[1] "single-step"
-
-attr(,"class")
-[1] "mtest"
 > 
 > 
 > ### NAs in coefficients
@@ -537,4 +442,4 @@ $alternative
 > 
 > proc.time()
    user  system elapsed 
-  1.104   0.072   1.176 
+  1.164   0.064   1.224 
