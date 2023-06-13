@@ -1,4 +1,6 @@
 
+options(digits = 4)
+
 library("multcomp")
 RNGversion("3.5.2")
 set.seed(290875)
