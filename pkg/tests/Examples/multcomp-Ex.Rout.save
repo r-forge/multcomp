@@ -1,7 +1,7 @@
 
-R version 4.3.0 (2023-04-21) -- "Already Tomorrow"
-Copyright (C) 2023 The R Foundation for Statistical Computing
-Platform: x86_64-pc-linux-gnu (64-bit)
+R version 4.4.2 (2024-10-31) -- "Pile of Leaves"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -777,32 +777,10 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 +                         data = warpbreaks), 
 +                    linfct = mcp("tension" = "Tukey")))
 +   }
-
-	 Simultaneous Confidence Intervals
-
-Multiple Comparisons of Means: Tukey Contrasts
-
-
-Fit: Colr(formula = breaks ~ wool + tension, data = warpbreaks)
-
-Quantile = 2.3437
-95% family-wise confidence level
- 
-
-Linear Hypotheses:
-           Estimate lwr     upr    
-M - L == 0  1.1969  -0.2336  2.6275
-H - L == 0  2.1613   0.6761  3.6464
-H - M == 0  0.9643  -0.4297  2.3584
-
 > 
 > 
 > 
 > cleanEx()
-
-detaching ‘package:tram’, ‘package:mlt’, ‘package:basefun’,
-  ‘package:variables’
-
 > nameEx("litter")
 > ### * litter
 > 
@@ -1878,7 +1856,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  6.825 0.136 6.962 0 0 
+Time elapsed:  5.512 0.067 5.607 0 0 
 > grDevices::dev.off()
 null device 
           1 
