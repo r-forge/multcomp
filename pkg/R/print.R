@@ -124,12 +124,12 @@ print.summary.gtest <- function(x,
     print.glht(x, digits = digits)
     cat("Global Test:\n")
     if (x$test$type == "Chisq") {
-        pr <- data.frame(x$test$SSH, x$test$df[1], x$test$pval)
+        pr <- data.frame(x$test$SSH, x$test$df[1], x$test$pvalue)
         names(pr) <- c("Chisq", "DF", "Pr(>Chisq)")
     }
     if (x$test$type == "F") {
         pr <- data.frame(x$test$fstat, x$test$df[1], x$test$df[2], 
-                         x$test$pval)
+                         x$test$pvalue)
         names(pr) <- c("F", "DF1", "DF2", "Pr(>F)")
     }
     print(pr, digits = digits)
