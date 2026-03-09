@@ -5,6 +5,7 @@
 %%\VignetteDepends{multcomp}
 
 \usepackage[utf8]{inputenc}
+\usepackage{hyperref}
 
 \usepackage{amsfonts}
 \usepackage{amstext}
@@ -348,7 +349,7 @@ via its \Rcmd{test} argument:
 The analyses shown in \cite{Westfall1999} can be reproduced using \Rpackage{multcomp}
 by running the \RR{} transcript file in \file{inst/MCMT}.
 
-\bibliographystyle{plainnat}
+\bibliographystyle{jss}
 \bibliography{\Sexpr{gsub("\\.bib", "", system.file("REFERENCES.bib", package = "multcomp"))}}
 
 \end{document}
