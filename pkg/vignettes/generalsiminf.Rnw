@@ -968,7 +968,7 @@ extended tumor classification scheme incorporating molecular subgroups of the di
 obtained by gene expression profiling. The analyses reported here
 are based on clinical data only (thus omitting available gene expression data) 
 published online at 
-\url{http://www.ncbi.nlm.nih.gov/geo}, accession number GSE425. The
+\url{https://www.ncbi.nlm.nih.gov/geo}, accession number GSE425. The
 overall survival time and censoring indicator as well as the   
 clinical variables age, sex, lactic dehydrogenase level (LDH), 
 white blood cell count (WBC), and treatment group are taken from Supplementary

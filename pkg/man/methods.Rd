@@ -111,31 +111,7 @@ univariate_calpha(...)
   and \code{\link{vcov}} its covariance. 
 
 }
-\references{
-
-   Frank Bretz, Torsten Hothorn and Peter Westfall (2010),
-   \emph{Multiple Comparisons Using R}, CRC Press, Boca Raton.
-
-   Juliet P. Shaffer (1986), 
-   Modified sequentially rejective multiple test procedures. 
-   \emph{Journal of the American Statistical Association},
-   \bold{81}, 826--831.
-
-   Peter H. Westfall (1997), 
-   Multiple testing of general contrasts using logical constraints
-   and correlations. \emph{Journal of the American Statistical Association},
-   \bold{92}, 299--306.
-
-   P. H. Westfall, R. D. Tobias, D. Rom, R. D. Wolfinger, Y. Hochberg (1999).
-   \emph{Multiple Comparisons and Multiple Tests Using the SAS System}.
-   Cary, NC: SAS Institute Inc.
-
-   Torsten Hothorn, Frank Bretz and Peter Westfall (2008),
-   Simultaneous Inference in General Parametric Models.
-   \emph{Biometrical Journal}, \bold{50}(3), 346--363;
-   See \code{vignette("generalsiminf", package = "multcomp")}.
-
-}
+\references{\bibshow{*}}
 \examples{
 
   ### set up a two-way ANOVA 
