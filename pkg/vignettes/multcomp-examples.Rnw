@@ -349,7 +349,7 @@ The analyses shown in \cite{Westfall1999} can be reproduced using \Rpackage{mult
 by running the \RR{} transcript file in \file{inst/MCMT}.
 
 \bibliographystyle{plainnat}
-\bibliography{multcomp}
+\bibliography{\Sexpr{gsub("\\.bib", "", system.file("REFERENCES.bib", package = "multcomp"))}}
 
 \end{document}
 

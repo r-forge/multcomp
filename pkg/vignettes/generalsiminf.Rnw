@@ -1103,6 +1103,6 @@ package vignette ``\Rcmd{generalsiminf}''.
 
 
 \bibliographystyle{plainnat}
-\bibliography{references}
+\bibliography{\Sexpr{gsub("\\.bib", "", system.file("REFERENCES.bib", package = "multcomp"))}}
 
 \end{document}

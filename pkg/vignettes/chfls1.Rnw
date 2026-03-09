@@ -466,5 +466,5 @@ frequent orgasms with cumulative odds ratios of \Sexpr{formatC(exp(s$test$coef[5
 
 
 \bibliographystyle{jss}
-\bibliography{chfls1}
+\bibliography{\Sexpr{gsub("\\.bib", "", system.file("REFERENCES.bib", package = "multcomp"))}}
 \end{document}

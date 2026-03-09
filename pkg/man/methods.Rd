@@ -76,9 +76,10 @@ univariate_calpha(...)
   \code{"single-step"} implements adjusted p values based on the joint
   normal or t distribution of the linear function, and
   \code{"Shaffer"} and \code{"Westfall"} implement logically constraint 
-  multiplicity adjustments (Shaffer, 1986; Westfall, 1997). 
+  multiplicity adjustments
+  \bibcitep{multcomp::shaffer1986,multcomp::westfall1997}.
   \code{"free"} implements multiple testing procedures under free 
-  combinations (Westfall et al, 1999).
+  combinations \bibcitep{multcomp::westfall1999}.
   In addition, all adjustment methods
   implemented in \code{\link{p.adjust}} are available as well.
 
@@ -98,8 +99,8 @@ univariate_calpha(...)
   intervals require appropriate settings of seeds.
 
   A more detailed description of the underlying methodology is
-  available from Hothorn et al. (2008) and Bretz et al. (2010).
-
+  available from \bibcitet{hothorn2008b} and 
+  \bibcitet{Bretz+Hothorn+Westfall_2010}.
 
 }
 \value{
