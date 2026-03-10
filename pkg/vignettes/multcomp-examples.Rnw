@@ -37,6 +37,8 @@
 \newcommand{\Rlevel}[1]{\texttt{#1}}
 \newcommand{\file}[1]{\hbox{\rm\texttt{#1}}}
 
+%% hyperlinked dois in jss refstyle
+\newcommand{\doi}[1]{\href{https://doi.org/#1}{\normalfont\texttt{\@doi{#1}}}}
 
 \begin{document}
 
